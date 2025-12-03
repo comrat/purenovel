@@ -57,7 +57,7 @@ Scene {
 	onCompleted: {
 		var scenario = {
 			"entrypoint": {
-				"lines": [
+				"steps": [
 					{
 						"character": "Cat",
 						"text": "Hello!"
@@ -82,18 +82,28 @@ Scene {
 				]
 			},
 			"approveCase": {
-				"lines": [
+				"steps": [
 					{
 						"character": "Cat",
 						"text": ":3"
+					}, {
+						"character": "Cat",
+						"text": "Thank you!"
+					}, {
+						"nextScene": "goodending"
 					}
 				]
 			},
 			"declineCase": {
-				"lines": [
+				"steps": [
 					{
 						"character": "Cat",
 						"text": ">:("
+					}, {
+						"character": "Cat",
+						"text": "You'll regret this!"
+					}, {
+						"nextScene": "badending"
 					}
 				]
 			}
