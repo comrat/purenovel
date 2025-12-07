@@ -1,6 +1,73 @@
 Scene {
 	id: introScene;
 	backgroundImage: "assets/background/kitchen.jpg";
+	scenario: Scenario {
+		Chapter {
+			title: "entrypoint";
+
+			TextLine {
+				character: "Cat";
+				text: "Hello!";
+			}
+
+			TextLine {
+				character: "Cat";
+				text: "Are you going to feed me or not?";
+			}
+
+			Choice {
+				ChoiceOption {
+					text: "Yes";
+					jumpTo: "approveCase";
+
+					onChoosed: { introScene.approveMethod(); }
+				}
+
+				ChoiceOption {
+					text: "No";
+					jumpTo: "declineCase";
+
+					onChoosed: { introScene.declineMethod(); }
+				}
+			}
+		}
+
+		Chapter {
+			title: "approveCase";
+
+			TextLine {
+				character: "Cat";
+				text: ":3";
+			}
+
+			TextLine {
+				character: "Cat";
+				text: "Thank you!";
+			}
+
+			GotoObject {
+				nextScene: "goodending";
+			}
+		}
+
+		Chapter {
+			title: "declineCase";
+
+			TextLine {
+				character: "Cat";
+				text: ">:(";
+			}
+
+			TextLine {
+				character: "Cat";
+				text: "You'll regret this!";
+			}
+
+			GotoObject {
+				nextScene: "badending";
+			}
+		}
+	}
 
 	Character {
 		id: cat;
@@ -20,7 +87,7 @@ Scene {
 		}
 	}
 
-	Choice {
+	ChoiceDialog {
 		id: choice;
 		delegate: ChoiceDelegate {
 			onPressed: {
@@ -52,63 +119,5 @@ Scene {
 
 	declineMethod: {
 		game.currentCatTag = "angry";
-	}
-
-	onCompleted: {
-		var scenario = {
-			"entrypoint": {
-				"steps": [
-					{
-						"character": "Cat",
-						"text": "Hello!"
-					}, {
-						"character": "Cat",
-						"text": "Are you going to feed me or not?",
-					}, {
-						"choice": {
-							"options": [
-								{
-									"text": "Yes",
-									"jumpTo": "approveCase",
-									"callback": "approveMethod"
-								}, {
-									"text": "No",
-									"jumpTo": "declineCase",
-									"callback": "declineMethod"
-								}
-							]
-						}
-					}
-				]
-			},
-			"approveCase": {
-				"steps": [
-					{
-						"character": "Cat",
-						"text": ":3"
-					}, {
-						"character": "Cat",
-						"text": "Thank you!"
-					}, {
-						"nextScene": "goodending"
-					}
-				]
-			},
-			"declineCase": {
-				"steps": [
-					{
-						"character": "Cat",
-						"text": ">:("
-					}, {
-						"character": "Cat",
-						"text": "You'll regret this!"
-					}, {
-						"nextScene": "badending"
-					}
-				]
-			}
-		}
-		this.setupScene(scenario);
-		this.setSequence("entrypoint");
 	}
 }
