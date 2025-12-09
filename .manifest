@@ -1,6 +1,7 @@
 {
 	"platforms": ["web"],
 	"sources": ["src", "qmlcore-vn"],
+	"languages": ["ru_RU"],
 	"properties": {
 		"author": {
 			"name": "PureQML Team",
@@ -18,8 +19,6 @@
 		"resolutionHeight": 1080,
 		"virtual.width": 1280,
 		"virtual.height": 720,
-		"iconColor": "#25B04B",
-		"logPanel": true,
 		"version": "0.0.1"
 	},
 	"templater": "jinja2"

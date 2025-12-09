@@ -6,8 +6,14 @@ SceneManager {
 	Consts { id: consts; }
 	GameLogic { id: game; }
 
+	////////// Menu Pages //////////
 	//@using { src.menu.MenuPage }
 	LazyActivity { name: "menu"; component: "src.menu.MenuPage"; }
+	//@using { src.menu.SettingsPage }
+	LazyActivity { name: "settings"; component: "src.menu.SettingsPage"; }
+
+
+	////////// Scenes //////////
 	//@using { src.scenes.IntroScene }
 	LazyActivity { name: "intro"; component: "src.scenes.IntroScene"; }
 	//@using { src.scenes.GoodEndingScene }

@@ -6,25 +6,25 @@ Scene {
 			title: "entrypoint";
 
 			TextLine {
-				character: "Cat";
-				text: "Hello!";
+				character: qsTr("Cat");
+				text: qsTr("Hello!");
 			}
 
 			TextLine {
-				character: "Cat";
-				text: "Are you going to feed me or not?";
+				character: qsTr("Cat");
+				text: qsTr("Are you going to feed me or not?");
 			}
 
 			Choice {
 				ChoiceOption {
-					text: "Yes";
+					text: qsTr("Yes");
 					jumpTo: "approveCase";
 
 					onChoosed: { introScene.approveMethod(); }
 				}
 
 				ChoiceOption {
-					text: "No";
+					text: qsTr("No");
 					jumpTo: "declineCase";
 
 					onChoosed: { introScene.declineMethod(); }
@@ -36,13 +36,13 @@ Scene {
 			title: "approveCase";
 
 			TextLine {
-				character: "Cat";
-				text: ":3";
+				character: qsTr("Cat");
+				text: qsTr(":3");
 			}
 
 			TextLine {
-				character: "Cat";
-				text: "Thank you!";
+				character: qsTr("Cat");
+				text: qsTr("Thank you!");
 			}
 
 			GotoObject {
@@ -54,13 +54,13 @@ Scene {
 			title: "declineCase";
 
 			TextLine {
-				character: "Cat";
-				text: ">:(";
+				character: qsTr("Cat");
+				text: qsTr(">:(");
 			}
 
 			TextLine {
-				character: "Cat";
-				text: "You'll regret this!";
+				character: qsTr("Cat");
+				text: qsTr("You'll regret this!");
 			}
 
 			GotoObject {
@@ -109,7 +109,7 @@ Scene {
 			choice.reset()
 			dialog.setText(line.character, line.text);
 		} else if (line.choice) {
-			choice.show(line.choice.options)
+			choice.show(line.choice.options);
 		}
 	}
 

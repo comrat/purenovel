@@ -8,9 +8,9 @@ Scene {
 		anchors.centerIn: parent;
 		spacing: 10s;
 		model: ListModel {
-			ListElement { text: "PLAY"; action: "play"; }
-			ListElement { text: "SETTINGS"; action: "settings"; }
-			ListElement { text: "EXIT"; action: "exit"; }
+			ListElement { text: qsTr("PLAY"); action: "play"; }
+			ListElement { text: qsTr("SETTINGS"); action: "settings"; }
+			ListElement { text: qsTr("EXIT"); action: "exit"; }
 		}
 		delegate: MenuDelegate {
 			onPressed: {
@@ -19,6 +19,7 @@ Scene {
 						main.startGame("intro")
 						break;
 					case "settings":
+						main.push("settings")
 						break;
 					case "exit":
 						break;
