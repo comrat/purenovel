@@ -1,6 +1,7 @@
 Scene {
 	id: introScene;
 	backgroundImage: "assets/background/kitchen.jpg";
+	backgroundMusic: "assets/music/intro.m4a";
 	scenario: Scenario {
 		Chapter {
 			title: "entrypoint";

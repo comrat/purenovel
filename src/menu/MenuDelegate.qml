@@ -10,8 +10,6 @@ WebItem {
 		GradientStop { color: "#0000"; position: 1.0; }
 	}
 
-	ClickMixin { }
-
 	Text {
 		width: 100%;
 		anchors.verticalCenter: parent.verticalCenter;
