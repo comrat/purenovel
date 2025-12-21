@@ -81,6 +81,7 @@ Scene {
 
 	DialogBox {
 		id: dialog;
+		textTypedDelay: 30;
 		gradient: Gradient {
 			GradientStop { color: "#0000"; position: 0.0; }
 			GradientStop { color: "#0005"; position: 0.2; }
@@ -92,7 +93,7 @@ Scene {
 		id: choice;
 		delegate: ChoiceDelegate {
 			onPressed: {
-				introScene.handleChoice(model)
+				introScene.handleChoice(model);
 			}
 		}
 	}
@@ -102,12 +103,12 @@ Scene {
 		anchors.verticalCenter: dialog.verticalCenter;
 		anchors.rightMargin: 20s;
 
-		onPressed: { introScene.moveNext() }
+		onPressed: { introScene.moveNext(); }
 	}
 
 	onTriggered(line): {
 		if (line.text) {
-			choice.reset()
+			choice.reset();
 			dialog.setText(line.character, line.text);
 		} else if (line.choice) {
 			choice.show(line.choice.options);
