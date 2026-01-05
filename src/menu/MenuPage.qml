@@ -16,7 +16,7 @@ Scene {
 			onPressed: {
 				switch (model.action) {
 					case "play":
-						main.startGame("intro")
+						main.showScene("intro")
 						break;
 					case "settings":
 						main.push("settings")
