@@ -46,7 +46,7 @@ Scene {
 				text: qsTr("Thank you!");
 			}
 
-			GotoObject {
+			JumpTo {
 				nextScene: "goodending";
 			}
 		}
@@ -64,7 +64,7 @@ Scene {
 				text: qsTr("You'll regret this!");
 			}
 
-			GotoObject {
+			JumpTo {
 				nextScene: "badending";
 			}
 		}
