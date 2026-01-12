@@ -87,6 +87,8 @@ Scene {
 			GradientStop { color: "#0005"; position: 0.2; }
 			GradientStop { color: "#000e"; position: 1.0; }
 		}
+
+		onTypeWriterTriggered: { main.playSound("assets/sound/tick.ogg"); }
 	}
 
 	ChoiceDialog {
