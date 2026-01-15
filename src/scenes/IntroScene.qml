@@ -111,7 +111,10 @@ Scene {
 	onTriggered(line): {
 		if (line.text) {
 			choice.reset();
-			dialog.setText(line.character, line.text);
+			dialog.setText({
+				title: line.character,
+				text: line.text
+			});
 		} else if (line.choice) {
 			choice.show(line.choice.options);
 		}
